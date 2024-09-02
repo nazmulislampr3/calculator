@@ -1,0 +1,11 @@
+export const pOperators = "÷|×|-|\\+";
+export const pOperators1 = "÷|×";
+export const pOperators2 = "-|\\+";
+export const pNumber = "\\d+(\\.\\d+)?";
+export const pAllowAtFirst = `(-|\\(|\\d)`;
+export const pAllowAtLast = `(\\d|%|\\))`;
+export const pAllowBeforePercent = `\\d|%|\\)`;
+export const pAllowBefore3Operators = `\\d|%|\\)`;
+export const pAllowBeforeMinus = `\\d|%|\\(|\\)|${pOperators1}`;
+export const pAllowBeforeBracket2 = `\\d|%|\\)`;
+export const pAllowAfterDot = `\\d`;
