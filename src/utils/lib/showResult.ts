@@ -1,4 +1,4 @@
-import { pAllowAtFirst, pAllowAtLast } from "./patterns";
+import { pAllowAtFirst, pAllowAtLast, pNumber } from "./patterns";
 import rx from "./rx";
 
 const normalize = (inputText: string): string => {
@@ -16,7 +16,7 @@ const normalize = (inputText: string): string => {
   return inputText;
 };
 
-const showInputPattern = /\d+.[^\d]+/;
+const showInputPattern = rx(`(${pNumber}).[^(${pNumber})]+`);
 const showResult = (inputTxt: string): boolean =>
   showInputPattern.test(normalize(inputTxt));
 
