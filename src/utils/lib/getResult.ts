@@ -17,6 +17,7 @@ const getResult = (numbers: string, operatorIndex: undefined | number = 0) => {
     if (!rx(pAllowAtLast).test(numbers[numbers.length - 1])) {
       return getResult(numbers.substring(0, numbers.length - 1));
     }
+
     const p1 = /(\+-)|(-\+)/g;
     if (p1.test(numbers)) {
       numbers = numbers.replace(p1, "-");
@@ -24,7 +25,7 @@ const getResult = (numbers: string, operatorIndex: undefined | number = 0) => {
     }
 
     const p2 = /(--)|(\+\+)/g;
-    if (p1.test(numbers)) {
+    if (p2.test(numbers)) {
       numbers = numbers.replace(p2, "+");
       return getResult(numbers);
     }
