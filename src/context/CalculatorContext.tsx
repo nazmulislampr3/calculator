@@ -12,6 +12,7 @@ import {
   pOperators1,
   pOperators2,
 } from "../utils/lib/patterns";
+import showResult from "../utils/lib/showResult";
 
 const calculatorContext = createContext<{
   inputs: Inputs;
@@ -67,7 +68,7 @@ const CalculatorContextProvider = ({ children }: { children: ReactNode }) => {
   ]);
   const inputText = inputs.join("");
   let outputResult = getResult(inputText);
-  const output = outputResult || "";
+  const output = showResult(inputText) ? outputResult : "";
 
   const { length } = inputs;
   const lastIndex = length - 1;
