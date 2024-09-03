@@ -172,8 +172,6 @@ const CalculatorContextProvider = ({ children }: { children: ReactNode }) => {
     setInputs([outputResult]);
   };
 
-  console.table({ result: getResult(inputText) });
-
   const clear: Func1 = () => setInputs([]);
 
   return (
