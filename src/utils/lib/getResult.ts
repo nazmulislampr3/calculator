@@ -139,7 +139,7 @@ const getResult = (numbers: string, operatorIndex: undefined | number = 0) => {
 
         num1 = firstMinus && operator === "-" ? -num1 : num1;
 
-        const value = String(
+        const value = `+${String(
           operator === "÷"
             ? num1 / num2
             : operator === "×"
@@ -147,7 +147,7 @@ const getResult = (numbers: string, operatorIndex: undefined | number = 0) => {
             : operator === "-"
             ? num1 - num2
             : num1 + num2
-        );
+        )}`;
 
         numbers = numbers.replace(chunk, value);
         return getResult(numbers);

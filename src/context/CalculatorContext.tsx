@@ -65,7 +65,8 @@ const CalculatorContextProvider = ({ children }: { children: ReactNode }) => {
     ")",
     "%",
   ]);
-  const inputText = inputs.join("");
+  // const inputText = inputs.join("");
+  const inputText = "46+982×-81×-6+86";
   let outputResult = getResult(inputText);
   const output = outputResult || "";
 
