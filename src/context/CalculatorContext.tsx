@@ -13,6 +13,7 @@ import {
   pOperators2,
 } from "../utils/lib/patterns";
 import showResult from "../utils/lib/showResult";
+import normalize from "../utils/lib/normalize";
 
 const calculatorContext = createContext<{
   inputs: Inputs;
@@ -67,8 +68,9 @@ const CalculatorContextProvider = ({ children }: { children: ReactNode }) => {
     "%",
   ]);
   const inputText = inputs.join("");
-  let outputResult = getResult(inputText);
-  const output = showResult(inputText) ? outputResult : "";
+  const normalizedTxt = normalize(inputText);
+  let outputResult = getResult(normalizedTxt);
+  const output = showResult(normalizedTxt) ? outputResult : "";
 
   const { length } = inputs;
   const lastIndex = length - 1;
